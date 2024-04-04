@@ -1,18 +1,20 @@
+import java.util.Scanner;
 import java.util.*;
- class Contacts {
 
-    String first_name;
-    String last_name;
-    String address;
-    String city;
-    String state;
-    String zipcode;
-    String phone_number;
-    String email_id;
+class UserData {
+
+    private String first_name;
+    private String last_name;
+    private String address;
+    private String city;
+    private String state;
+    private String zipcode;
+    private String phone_number;
+    private String email_id;
 
 
 
-    public  Contacts(String first_name,String last_name,String address,String city,String state,String zipcode,String phone_number,String email_id){
+    public UserData(String first_name,String last_name,String address,String city,String state,String zipcode,String phone_number,String email_id){
 
         this.first_name = first_name;
         this.last_name = last_name;
@@ -24,70 +26,85 @@ import java.util.*;
         this.email_id = email_id;
     }
 
+    public void setFirstName(String first_name){
+        this.first_name = first_name;
+    }
+    public String getFirstName(){
+        return first_name;
+    }
+    public void setLastName(String last_name){
+        this.last_name = last_name;
+    }
+    public String getLastName(){
+        return last_name;
+    }
+    public void setAddress(String address){
+        this.address = address;
+    }
+    public String getAddress(){
+        return address;
+    }
+    public void setCity(String city){
+        this.city = city;
+    }
+    public String getCity(){
+        return city;
+    }
+    public void setState(String state){
+        this.state = state;
+    }
+    public String getState(){
+        return state;
+    }
+    public void setZipcode(String zipcode){
+        this.zipcode = zipcode;
+    }
+    public String getZipcode(){
+        return zipcode;
+    }
+    public void setPhonenumber(String phone_number){
+        this.phone_number = phone_number;
+    }
+    public String getPhonenumber(){
+        return phone_number;
+    }
+    public void setEmailid(String email_id){
+        this.email_id = email_id;
+    }
+    public String getEmailid(){
+        return email_id;
+    }
+
    @Override
    public String toString(){
 
-        System.out.println("First Name :"+first_name);
-        System.out.println("Last Name :"+last_name);
-        System.out.println("Address : "+address);
-        System.out.println("City : "+city);
-        System.out.println("State : "+state);
-        System.out.println("Zip code : "+zipcode);
-        System.out.println("Phone Number : "+phone_number);
-        System.out.println("Email Id : "+email_id);
-        return "";
+        return "*** Address Book ***"+
+        " "+first_name+
+        " "+last_name+
+        " "+address+
+        " "+city+
+        " "+state+
+        " "+zipcode+
+        " "+phone_number+
+        " "+email_id+"";
    }
+   UserData data = new UserData(first_name, last_name, address, city, state, zipcode, phone_number, email_id);
+   
 }
 
-public class AddressBook {
+class Contact{
 
-    ArrayList<Contacts> contactList;
-    
-
-    public  AddressBook(){
-
-        contactList=new ArrayList<>();
-    }
-
-    public  void addContacts(){
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Enter First Name : ");
-        String first_name = sc.nextLine();
-        System.out.println("Enter Last Name : ");
-        String last_name = sc.nextLine();
-        System.out.println("Enter Address : ");
-        String address = sc.nextLine();
-        System.out.println("Enter City : ");
-        String city = sc.nextLine();
-        System.out.println("Enter State : ");
-        String state = sc.nextLine();
-        System.out.println("Enter Zip Code : ");
-        String zipcode = sc.nextLine();
-        System.out.println("Enter Phone Number : ");
-        String phone_number = sc.nextLine();
-        System.out.println("Enter Email Id : ");
-        String email_id = sc.nextLine();
-        System.out.println();
-        this.addContact(first_name, last_name, address, city, state, zipcode, phone_number, email_id);
-        sc.close();
-    }
+    ArrayList<UserData> userdata = new ArrayList<>();
+    Scanner sc = new Scanner(System.in);
 
 
-    public void addContact(String first_name,String last_name,String address,String city,String state,String zipcode,String phone_number,String email_id){
-        Contacts contacts = new Contacts(first_name,last_name,address,city,state,zipcode,phone_number,email_id);
-        contactList.add(contacts);
-        System.out.println(contacts);
-    }
+}
 
-
-
-
+public class AddressBook {   
     public static void main(String[] args) {
-        
-        AddressBook addressBook = new AddressBook();
-        addressBook.addContacts();
-        
-
-        
-    }
+       
+        System.out.println("***  Welcome To Address Book  ***");
+       
+       
+    }     
 }
