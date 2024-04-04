@@ -6,13 +6,13 @@ import java.util.*;
     String address;
     String city;
     String state;
-    long zipcode;
+    String zipcode;
     String phone_number;
     String email_id;
 
 
 
-    public  Contacts(String first_name,String last_name,String address,String city,String state,long zipcode,String phone_number,String email_id){
+    public  Contacts(String first_name,String last_name,String address,String city,String state,String zipcode,String phone_number,String email_id){
 
         this.first_name = first_name;
         this.last_name = last_name;
@@ -49,8 +49,31 @@ public class AddressBook {
         contactList=new ArrayList<>();
     }
 
+    public  void addContacts(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter First Name : ");
+        String first_name = sc.nextLine();
+        System.out.println("Enter Last Name : ");
+        String last_name = sc.nextLine();
+        System.out.println("Enter Address : ");
+        String address = sc.nextLine();
+        System.out.println("Enter City : ");
+        String city = sc.nextLine();
+        System.out.println("Enter State : ");
+        String state = sc.nextLine();
+        System.out.println("Enter Zip Code : ");
+        String zipcode = sc.nextLine();
+        System.out.println("Enter Phone Number : ");
+        String phone_number = sc.nextLine();
+        System.out.println("Enter Email Id : ");
+        String email_id = sc.nextLine();
+        System.out.println();
+        this.addContact(first_name, last_name, address, city, state, zipcode, phone_number, email_id);
+        sc.close();
+    }
 
-    public void addContact(String first_name,String last_name,String address,String city,String state,long zipcode,String phone_number,String email_id){
+
+    public void addContact(String first_name,String last_name,String address,String city,String state,String zipcode,String phone_number,String email_id){
         Contacts contacts = new Contacts(first_name,last_name,address,city,state,zipcode,phone_number,email_id);
         contactList.add(contacts);
         System.out.println(contacts);
@@ -62,7 +85,8 @@ public class AddressBook {
     public static void main(String[] args) {
         
         AddressBook addressBook = new AddressBook();
-        addressBook.addContact("Tushar", "Jadhav", "Asalfa village Ghatkopar West", "Mumbai", "Maharashtra", 400084, "8108342683", "tusharjadhav228@gmail.com");
+        addressBook.addContacts();
+        
 
         
     }
