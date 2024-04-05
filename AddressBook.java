@@ -122,6 +122,84 @@ class Contact{
 
     }
 
+    public void updateContact(){
+
+        for (UserData userData2 : userdata) {
+                
+                String username = sc.next();
+        if(username.equals(userdata.get(0).getFirstName())){
+
+        switch (sc.nextInt()) {
+            case 1:
+                System.out.println("Enter the First Name : ");
+                userData2.setFirstName(sc.next());
+                break;
+
+            case 2:
+                System.out.println("Enter the Last Name : ");
+                userData2.setLastName(sc.next());
+                break;
+
+            case 3:
+                System.out.println("Enter the Address : ");
+                userData2.setAddress(sc.next());
+                break;
+
+            case 4:
+                System.out.println("Enter the City : ");
+                userData2.setCity(sc.next());
+                break;  
+                
+            case 5:
+                System.out.println("Enter the State : ");
+                userData2.setState(sc.next());
+                break;
+
+            case 6:
+                System.out.println("Enter the ZipCode : ");
+                userData2.setZipcode(sc.next());
+                break;
+
+            case 7:
+                System.out.println("Enter the Phone Number : ");
+                userData2.setPhonenumber(sc.next());
+                break;
+
+            case 8:
+                System.out.println("Enter the Email Id : ");
+                userData2.setEmailid(sc.next());
+                break;
+
+            case 9:
+                System.out.println("Enter the First Name : ");
+                userData2.setFirstName(sc.next());
+                System.out.println("Enter the Last Name : ");
+                userData2.setLastName(sc.next());
+                System.out.println("Enter the Address : ");
+                userData2.setAddress(sc.next());
+                System.out.println("Enter the City : ");
+                userData2.setCity(sc.next());
+                System.out.println("Enter the State : ");
+                userData2.setState(sc.next());
+                System.out.println("Enter the ZipCode : ");
+                userData2.setZipcode(sc.next());
+                System.out.println("Enter the Phone Number : ");
+                userData2.setPhonenumber(sc.next());
+                System.out.println("Enter the Email Id : ");
+                userData2.setEmailid(sc.next());
+                break;
+
+            default:
+                break;
+        }
+     }
+     else{
+        System.out.println("User not Found!");
+     }
+        
+    }
+    }
+
     public void viewContacts(){
 
         if(userdata.size()==0){
@@ -159,7 +237,11 @@ public class AddressBook {
                     break;
             
                 case 2:
-                
+                    System.out.println(" 1.First Name \n 2.Last Name \n 3.Address \n 4.City \n 5.State \n 6.ZipCode \n 7.Phone Number \n 8.Email Id \n 9.Update All");
+                    contact.updateContact();
+                    System.out.println();
+                    System.out.println("Update Successfully ");
+                    System.out.println();
                     break;
 
                 case 3:
