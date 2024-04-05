@@ -310,12 +310,16 @@ public class AddressBook {
             System.out.println("Enter a value :");
             switch (sc.nextInt()) { 
                 case 1:
-                    contact.addContacts();
-                    System.out.println();
-                    System.out.println("Added Successfully ");
-                    System.out.println();
+                    System.out.println("Enter how many person u want to add : ");
+                    int a = sc.nextInt();
+                    for(int i=0;i<a;i++){
+                        contact.addContacts();
+                        System.out.println();
+                        System.out.println("Added Successfully ");
+                        System.out.println();   
+                    }
                     break;
-            
+                    
                 case 2:
                     System.out.println(" 1.First Name \n 2.Last Name \n 3.Address \n 4.City \n 5.State \n 6.ZipCode \n 7.Phone Number \n 8.Email Id \n 9.Update All");
                     contact.updateContact();
