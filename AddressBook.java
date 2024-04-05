@@ -79,16 +79,16 @@ class UserData {
    public String toString(){
 
         return "*** Address Book ***"+
-        " "+first_name+
-        " "+last_name+
-        " "+address+
-        " "+city+
-        " "+state+
-        " "+zipcode+
-        " "+phone_number+
-        " "+email_id+"";
+        " \n First Name : "+first_name+
+        " \n Last Name : "+last_name+
+        " \n Address : "+address+
+        " \n City : "+city+
+        " \n State : "+state+
+        " \n ZipCode : "+zipcode+
+        " \n Phone Number : "+phone_number+
+        " \n Email Id : "+email_id+"";
    }
-   UserData data = new UserData(first_name, last_name, address, city, state, zipcode, phone_number, email_id);
+//    UserData data = new UserData(first_name, last_name, address, city, state, zipcode, phone_number, email_id);
    
 }
 
@@ -98,13 +98,88 @@ class Contact{
     Scanner sc = new Scanner(System.in);
 
 
+    public void addContacts(){
+
+        System.out.println("Enter the First Name : ");
+        String first_name = sc.next();
+        System.out.println("Enter the Last Name : ");
+        String last_name = sc.next();
+        System.out.println("Enter the Address : ");
+        String address = sc.next();
+        System.out.println("Enter the City : ");
+        String city = sc.next();
+        System.out.println("Enter the State : ");
+        String state = sc.next();
+        System.out.println("Enter the Zip Code : ");
+        String zipcode = sc.next();
+        System.out.println("Enter the Phone Number : ");
+        String phone_number = sc.next();
+        System.out.println("Enter the Email Id : ");
+        String email_id = sc.next();
+
+        UserData data = new UserData(first_name, last_name, address, city, state, zipcode, phone_number, email_id);
+        userdata.add(data);
+
+    }
+
+    public void viewContacts(){
+
+        if(userdata.size()==0){
+            System.out.println("Address Book is Empty!");
+        }
+        else{
+            for(int i=0;i<userdata.size();i++){
+                UserData data1 = userdata.get(i);
+                System.out.println(data1);
+            }
+        }
+    }
+
+
 }
 
 public class AddressBook {   
+
+    
     public static void main(String[] args) {
-       
-        System.out.println("***  Welcome To Address Book  ***");
-       
-       
+        Scanner sc = new Scanner(System.in);
+        Contact contact = new Contact();
+        int n = 1;
+
+        while (n>0) {
+            System.out.println("***  Welcome To Address Book  ***");
+            System.out.println(" 1.Add Contact \n 2.Update Contact \n 3.Delete Contact \n 4.View Contact  \n 5.Exit");
+
+            switch (sc.nextInt()) { 
+                case 1:
+                    contact.addContacts();
+                    System.out.println();
+                    System.out.println("Added Successfully ");
+                    System.out.println();
+                    break;
+            
+                case 2:
+                
+                    break;
+
+                case 3:
+
+                    break;
+
+                case 4:
+                    contact.viewContacts();
+                    System.out.println();
+                    break;
+
+                case 5:
+                    System.exit(0);
+                    break;
+                default:
+                    break;
+            }
+            
+
+        }
+        sc.close();
     }     
 }
