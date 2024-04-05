@@ -126,9 +126,11 @@ class Contact{
 
         for (UserData userData2 : userdata) {
                 
-                String username = sc.next();
+            System.out.print("Enter the UserName :");
+            String username = sc.next();
         if(username.equals(userdata.get(0).getFirstName())){
 
+            System.out.println("Enter the value : ");
         switch (sc.nextInt()) {
             case 1:
                 System.out.println("Enter the First Name : ");
@@ -200,6 +202,84 @@ class Contact{
     }
     }
 
+    public void deleteContact(){
+        for (UserData userData2 : userdata) {
+            System.out.print("Enter the UserName :");   
+            String username = sc.next();
+    if(username.equals(userdata.get(0).getFirstName())){
+        
+            System.out.println("Enter the value : ");
+    switch (sc.nextInt()) {
+        case 1:
+            System.out.println("First Name Deleted ");
+            userData2.setFirstName(" ");
+            break;
+
+        case 2:
+            System.out.println("Last Name Deleted ");
+            userData2.setLastName(" ");
+            break;
+
+        case 3:
+            System.out.println("Address Deleted ");
+            userData2.setAddress(" ");
+            break;
+
+        case 4:
+            System.out.println("City Deleted ");
+            userData2.setCity(" ");
+            break;  
+            
+        case 5:
+            System.out.println("State Deleted ");
+            userData2.setState(" ");
+            break;
+
+        case 6:
+            System.out.println("ZipCode Deleted ");
+            userData2.setZipcode(" ");
+            break;
+
+        case 7:
+            System.out.println("Phone Number Deleted ");
+            userData2.setPhonenumber(" ");
+            break;
+
+        case 8:
+            System.out.println("Email Id Deleted ");
+            userData2.setEmailid(" ");
+            break;
+
+        case 9:
+            System.out.println("First Name Deleted ");
+            userData2.setFirstName("");
+            System.out.println("Last Name Deleted ");
+            userData2.setLastName(" ");
+            System.out.println("Address Deleted ");
+            userData2.setAddress(" ");
+            System.out.println("City Deleted ");
+            userData2.setCity(" ");
+            System.out.println("State Deleted ");
+            userData2.setState(" ");
+            System.out.println("ZipCode Deleted ");
+            userData2.setZipcode(" ");
+            System.out.println("Phone Number Deleted ");
+            userData2.setPhonenumber(" ");
+            System.out.println("Email Id Deleted ");
+            userData2.setEmailid(" ");
+            break;
+
+        default:
+            break;
+    }
+ }
+ else{
+    System.out.println("User not Found!");
+ }
+    
+}
+    }
+
     public void viewContacts(){
 
         if(userdata.size()==0){
@@ -227,7 +307,7 @@ public class AddressBook {
         while (n>0) {
             System.out.println("***  Welcome To Address Book  ***");
             System.out.println(" 1.Add Contact \n 2.Update Contact \n 3.Delete Contact \n 4.View Contact  \n 5.Exit");
-
+            System.out.println("Enter a value :");
             switch (sc.nextInt()) { 
                 case 1:
                     contact.addContacts();
@@ -245,7 +325,11 @@ public class AddressBook {
                     break;
 
                 case 3:
-
+                    System.out.println(" 1.First Name \n 2.Last Name \n 3.Address \n 4.City \n 5.State \n 6.ZipCode \n 7.Phone Number \n 8.Email Id \n 9.Delete All");
+                    contact.deleteContact();
+                    System.out.println();
+                    System.out.println("Delete Successfully ");
+                    System.out.println();
                     break;
 
                 case 4:
